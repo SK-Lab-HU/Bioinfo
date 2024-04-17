@@ -370,5 +370,16 @@ print(orf("AGCCATGTAGCTAACTCAGGTTACATGGGGATGACCCCGCGACTTGGATTAGAGTCTCTTTTGGAATAA
 DNA断片から元のDNA配列を組み立てるアルゴリズムについて考える。
 「DNA断片を組み立てて一つの配列にする」ということをアルゴリズム風に言い換えると、「全断片の中で共有部分が最長である２配列を組み合わせていき最終的に一つの長い配列を作る」となる。もちろん、このアルゴリズムに従うと必ず一意に組み立てが完了するわけではないため、不確実性があるが、DNA断片の長さの最小値を上げることでこれを防ぐことが可能である。
 
+組み立て前のDNA断片を以下のように定義する。
+
+```bash
+fragments_raw = ['ATTAGACCTG','CCTGCCGGAA','AGACCTGCCG','GCCGGAATAC']
+fragments = sorted(fragments)
+```
+
+
+
+
+
 
 
