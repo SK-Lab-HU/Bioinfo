@@ -71,6 +71,5 @@ Pythonのreplace構文を使用して、"T"を"U"に変更することで転写�
 ```python
 DNA : str = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
 mRNA : str = DNA.replace("T", "U")
-
 ```
 
