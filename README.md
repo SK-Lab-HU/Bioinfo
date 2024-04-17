@@ -116,3 +116,32 @@ codon_table= {
 
 ```
 
+## ハミング距離
+
+ハミング距離は2つの文字列S1とS2がどれだけ異なっているかを表す指標。
+これを利用することで、例えば遺伝子の変異の個数を表すことができる。
+
+```python
+S1 : str = "GAGCCTACTAACGGGAT"
+S2 : str = "CATCGTAATGACGGCCT"
+
+def d_h(S1: str, S2: str) -> int:
+    hamming_distance = 0
+    # s1とs2をそれぞれ同時に左から巡回
+    for i,j in zip(S1, S2):
+        if i != j:
+            hamming_distance += 1
+    return hamming_distance
+
+print(d_h(S1, S2))
+```
+
+上記の処理を高速化すると以下のようになる。
+
+```python
+S1 : str = "GAGCCTACTAACGGGAT"
+S2 : str = "CATCGTAATGACGGCCT"
+
+hamming_distance = sum([1 for i in range(len(S1)) if S1[i] != S2[i]])
+print(hamming_distance)
+```
