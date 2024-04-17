@@ -7,6 +7,10 @@
 
 
 ```python
+import random 
+
+nucleotides : list[str] = ["A", "C", "G", "T"]
+
 def generate_sequence_ver1(length: int) -> str:
     DNA = ""
     for _ in range(length):
