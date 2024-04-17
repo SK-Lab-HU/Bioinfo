@@ -433,6 +433,7 @@ def assembly(fragments: list[str]) -> list[str]:
 
 ```python
 print(assembly(fragments))
+# ['ATTAGACCTGCCGGAATAC']がすべてのfragmentsを使用してDNAを組み立てたときに最も短くなる配列。
 ```
 
 
