@@ -21,3 +21,11 @@ for i in sequences:
         shortest_seq_length = len(i)
 
 print(shortest_seq_length)
+
+def LCS(s_1:str,s_2:str) -> str:
+    for i in range(len(s_2),0,-1):
+        for j in range(len(s_2)-i+1):
+            substr = s_2[j:j+i]
+            if substr in s_1:
+                return(substr)
+    return ""
