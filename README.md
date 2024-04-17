@@ -229,7 +229,6 @@ with open("data.txt") as f:
 sequences: list = []
 seq : list = []
 for i in lines:
-    print(seq)
     if ">" in i: 
         sequences.append("".join(seq))
         seq = []
@@ -245,5 +244,8 @@ print(sequences)
 最長共通モチーフ探索に使用する配列群は、上記で取得したsequencesとする。
 戦略としては、始めに複数ある塩基配列のうち最短のものを軸としてその塩基配列を単位ヌクレオチドずつ切っていき、すべての配列に共通するモチーフが現れた時点で探索を終了するというシンプルなもの。
 
+```python
+
+```
 
 
