@@ -31,3 +31,21 @@ print(gc_rate)
 DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
 
 mRNA = DNA.replace("T", "U")
+
+
+S1 = "GAGCCTACTAACGGGAT"
+S2 = "CATCGTAATGACGGCCT"
+
+def d_h(S1: str, S2: str) -> int:
+    hamming_distance = 0
+    for i,j in zip(S1, S2):
+        if i != j:
+            hamming_distance += 1
+    return hamming_distance
+
+print(d_h(S1, S2))
+
+
+
+hamming_distance = sum([1 for i in range(len(S1)) if S1[i] != S2[i]])
+print(hamming_distance)
