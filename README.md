@@ -30,4 +30,8 @@ print(generate_sequence_ver2(10))
 
 
 
+## 転写
+
+以下のDNA配列について考える。
+
 
