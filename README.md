@@ -161,6 +161,38 @@ M : str = "ATAT"
 上記のようなモチーフの開始インデックスを探索する方法について考える。
 無数の方法があるが、シンプルでわかりやすい方法を考えた。
 
+始めに、pythonのリストのappend構文の例を示す。
+
+```python
+a : list = []
+a.append(1)
+a.append(2)
+a.append(3)
+
+# a = [1,2,3]
+
+b : list = []
+for i in range(1,4):
+    b.append(i)
+
+# b = [1,2,3]
+```
+
+モチーフ探索アルゴリズム
+
+```python
+DNA : str = "GATATATGCATATACTT"
+M : str = "ATAT" 
+
+def find_motif_1(DNA: str, M: str) -> list:
+    motif_indices = []
+    for i in range*len(DNA):
+        if DNA[i:i+len(M)] == M:
+            motif_indices.append(i)
+    return motif_indices
+
+print(find_motif_1(DNA, M))
+```
 
 
 
