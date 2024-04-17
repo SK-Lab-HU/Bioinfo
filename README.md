@@ -380,7 +380,7 @@ fragments = sorted(fragments)
 任意の二つのDNA断片について、オーバーラップしている部分前後二箇所のうち長い方を返す関数を定義する。
 
 ```python
-def find_overlap(seq1,seq2):
+def find_overlap(seq1:str,seq2:str) -> str:
     t_1 = ''
     t_2 = ''
     for i in range(len(seq1)):
@@ -396,6 +396,18 @@ def find_overlap(seq1,seq2):
     elif len(t_1) == len(t_2):
         return t_1
 ```
+
+上記の結果に基づいて、重複部分を取り除いて二つのDNA断片を結合する関数を定義する。
+```python
+def seq_overlay(s_1:str,s_2:str,seq_overlapped:str) -> str:
+    if seq_overlapped == s_1[:len(seq_overlapped)]:
+        s_n = s_2 + s_1[len(seq_overlapped):]
+    elif seq_overlapped == s_2[:len(seq_overlapped)]:
+        s_n = s_1 + s_2[len(seq_overlapped):]
+    return s_n
+```
+
+
 
 
 
