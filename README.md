@@ -78,3 +78,18 @@ DNA : str = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
 mRNA : str = DNA.replace("T", "U")
 ```
 
+## 翻訳
+
+Pythonの辞書(dict型)を使用すると、コドンをアミノ酸にマッピングすることができる。
+
+以下にpythonの辞書の例を示す。
+
+```Python
+d : dict = {"A":"1","B":"2"}
+
+# "A"をキーとして"1"が呼び出される。
+val1 = d["A"]
+print(val1)
+```
+
+
