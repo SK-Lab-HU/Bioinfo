@@ -222,6 +222,21 @@ with open("data.txt") as f:
 
 ここで、FASTAフォーマットでの配列の識別子として">"を採用して、以下のようにすべての配列を順にリストに格納する。
 
+```python
+with open("data.txt") as f:
+    lines = [i.replace("\n","") for i in f.readlines()]
 
+sequences: list = []
+seq : list = []
+for i in lines:
+    print(seq)
+    if ">" in i: 
+        sequences.append("".join(seq))
+        seq = []
+    else:
+        seq.append(i)
+print(sequences)
+```
+ループを抜けると、すべての配列がsequencesに格納された状態となる。
 
 
