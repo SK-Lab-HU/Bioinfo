@@ -234,6 +234,8 @@ for i in lines:
         seq = []
     else:
         seq.append(i)
+sequences.append("".join(seq))
+sequences = sequences[1:]
 print(sequences)
 ```
 ループを抜けると、すべての配列がsequencesに格納された状態となる。
