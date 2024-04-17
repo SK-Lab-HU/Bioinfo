@@ -28,6 +28,18 @@ def generate_sequence_ver2(length: int) -> str:
 print(generate_sequence_ver2(10))
 ```
 
+## DNA中のヌクレオチドの数
+
+pythonでは以下のcount構文で文字列Sに含まれる文字Aの数を数えることができる。
+
+```Python
+S = "13121"
+count_A : int = S.count("1")
+
+#この場合は3となる。
+print(count_A)
+```
+
 
 
 ## 転写
