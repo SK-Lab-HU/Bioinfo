@@ -260,15 +260,16 @@ def find_common_substr(s_1:str,s_2:str) -> str:
 次に、すべての配列のペアについて、上記の探索を行った結果を最長モチーフの候補に格納する。
 
 ```python
-import collections
 substring_list = [] 
 #最長モチーフの候補を格納するリストを作成
-for i in range(len(sequences)-1):
-    s_1 = sequences[i]
-    s_2 = sequences[i+1]
-    common_sub_str = find_common_substr(s_1,s_2)
-    print(common_sub_str)
-    substring_list.append(common_sub_str)
+for i in range(len(sequences)):
+    for j in range(len(sequences)):
+        if i != j:
+            common_sub_str = find_common_substr(sequences[i],sequences[j])
+            print(i)
+            print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+            substring_list.append(common_sub_str)
+
 ```
 
 最後に、候補のうち、最頻値を取得する。
@@ -277,7 +278,13 @@ for i in range(len(sequences)-1):
 #collectionsのCounterクラスを使用してsubstring_list中の頻度順に辞書d_substrに登録
 d_substr = collections.Counter(substring_list)
 lcs = next(iter(d_substr))
+print(d_substr)
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
 print(lcs)
+# すべての配列の部分列であるかを検証
+for n,i in enumerate(sequences):
+    if lcs in i:
+        print(n)
 ```
 
 
