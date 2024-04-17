@@ -377,6 +377,27 @@ fragments_raw = ['ATTAGACCTG','CCTGCCGGAA','AGACCTGCCG','GCCGGAATAC']
 fragments = sorted(fragments)
 ```
 
+任意の二つのDNA断片について、オーバーラップしている部分前後二箇所のうち長い方を返す関数を定義する。
+
+```python
+def find_overlap(seq1,seq2):
+    t_1 = ''
+    t_2 = ''
+    for i in range(len(seq1)):
+        if seq1[:i] == seq2[-i:]:
+            t_1 = seq1[:i]
+    for i in range(len(seq2)):
+        if seq2[:i] == seq1[-i:]:
+            t_2 = seq2[:i]
+    if len(t_1) > len(t_2):
+        return t_1
+    elif len(t_1) < len(t_2):
+        return t_2
+    elif len(t_1) == len(t_2):
+        return t_1
+```
+
+
 
 
 
