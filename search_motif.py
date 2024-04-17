@@ -4,13 +4,20 @@ with open("data.txt") as f:
 sequences: list = []
 seq : list = []
 for i in lines:
-    print(seq)
     if ">" in i: 
         sequences.append("".join(seq))
         seq = []
     else:
         seq.append(i)
-print(sequences)
+sequences.append("".join(seq))
+sequences = sequences[1:]
 
+shortest_seq: str = sequences[0]
+shortest_seq_length : int = len(sequences[0])
 
-    
+for i in sequences:
+    if len(i) < shortest_seq_length:
+        shortest_seq = i
+        shortest_seq_length = len(i)
+
+print(shortest_seq_length)
