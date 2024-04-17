@@ -205,6 +205,9 @@ def find_motif_2(DNA: str, M: str) -> list:
 print(find_motif_2(DNA, M))
 ```
 
+## 最長共通モチーフの探索アルゴリズム
+
+複数の塩基配列から共通するモチーフのうち最長のものを探索する場合について考える。
 
 
 
