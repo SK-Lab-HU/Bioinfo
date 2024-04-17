@@ -407,6 +407,33 @@ def seq_overlay(s_1:str,s_2:str,seq_overlapped:str) -> str:
     return s_n
 ```
 
+上記の関数を利用して、DNA断片を組み立てる関数を作成する。
+
+```python
+def assembly(fragments: list[str]) -> list[str]:
+    while len(fragments) !=1:
+        lcs_len = [0]
+        for i in range(len(fragments)):
+            t_i = fragments[i]
+            for j in range(len(fragments)):
+                t_j = fragments[j]
+                if j!=i and len(find_overlap(t_i,t_j))>lcs_len[-1]:
+                    lcs_len.append(len(find_overlap(t_i,t_j)))
+                    s_1 = t_i
+                    s_2 = t_j
+                else:
+                    pass 
+        fragments.remove(s_1)
+        fragments.remove(s_2)
+        fragments.append(seq_overlay(s_1,s_2,find_overlap(s_1,s_2)))
+    return fragments
+```
+
+実行結果
+
+```python
+print(assembly(fragments))
+```
 
 
 
