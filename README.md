@@ -45,7 +45,7 @@ print(count_A)
 上記構文を利用してDNA中のヌクレオチドの数を数えることができる。
 
 ```python
-DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+DNA : str = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
 print(DNA.count("A"))
 print(DNA.count("C"))   
 print(DNA.count("G"))
