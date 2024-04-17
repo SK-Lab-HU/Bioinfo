@@ -34,12 +34,23 @@ pythonでは以下のcount構文で文字列Sに含まれる文字Aの数を数�
 
 ```Python
 S = "13121"
+
+#値はint型で取得できる。
 count_A : int = S.count("1")
 
 #この場合は3となる。
 print(count_A)
 ```
 
+上記構文を利用してDNA中のヌクレオチドの数を数えることができる。
+
+```python
+DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+print(DNA.count("A"))
+print(DNA.count("C"))   
+print(DNA.count("G"))
+print(DNA.count("T"))
+```
 
 
 ## 転写
