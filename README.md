@@ -145,3 +145,17 @@ S2 : str = "CATCGTAATGACGGCCT"
 hamming_distance = sum([1 for i in range(len(S1)) if S1[i] != S2[i]])
 print(hamming_distance)
 ```
+
+## モチーフの探索
+
+例えば以下のような塩基配列のうち、モチーフMのindexは以下のようになる。
+
+```Python
+DNA : str = "GATATATGCATATACTT"
+M : str = "ATAT" 
+
+#モチーフのインデックスは
+# 1, 3, 9の3つ
+```
+
+
