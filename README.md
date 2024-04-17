@@ -21,6 +21,7 @@ print(generate_sequence_ver1(10))
 ```
 
 上記のコードを高速化・コンパクト化すると以下のようになる。
+
 ```Python
 import random 
 
