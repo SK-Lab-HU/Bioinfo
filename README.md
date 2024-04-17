@@ -244,19 +244,40 @@ print(sequences)
 
 複数の塩基配列の中から共通するモチーフのうち最長のものを探索するアルゴリズムについて考える。
 最長共通モチーフ探索に使用する配列群は、上記で取得したsequencesとする。
-戦略としては、始めに複数ある塩基配列のうち最短のものを軸としてその塩基配列を単位ヌクレオチドずつ切っていき、すべての配列に共通するモチーフが現れた時点で探索を終了するというシンプルなもの。
 
-始めに、以下のように最短の配列を求める。
+始めに、以下のように２つの塩基配列のうち最長の共通部分を返す関数を作成する。
 
-```python
-shortest_seq: str = sequences[0]
-shortest_seq_length : int = len(sequences[0])
-
-for i in sequences:
-    if len(i) < shortest_seq_length:
-        shortest_seq = i
-        shortest_seq_length = len(i)
+```Python
+def find_common_substr(s_1:str,s_2:str) -> str:
+    for i in range(len(s_2),0,-1):
+        for j in range(len(s_2)-i+1):
+            substr = s_2[j:j+i]
+            if substr in s_1:
+                return(substr)
+    return ""
 ```
 
+次に、すべての配列のペアについて、上記の探索を行った結果を最長モチーフの候補に格納する。
+
+```python
+import collections
+substring_list = [] 
+#最長モチーフの候補を格納するリストを作成
+for i in range(len(sequences)-1):
+    s_1 = sequences[i]
+    s_2 = sequences[i+1]
+    common_sub_str = find_common_substr(s_1,s_2)
+    print(common_sub_str)
+    substring_list.append(common_sub_str)
+```
+
+最後に、候補のうち、最頻値を取得する。
+
+```python
+#collectionsのCounterクラスを使用してsubstring_list中の頻度順に辞書d_substrに登録
+d_substr = collections.Counter(substring_list)
+lcs = next(iter(d_substr))
+print(lcs)
+```
 
 
