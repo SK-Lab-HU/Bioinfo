@@ -51,6 +51,19 @@ print(DNA.count("C"))
 print(DNA.count("G"))
 print(DNA.count("T"))
 ```
+## GC rateの計算
+
+Count構文を応用すると塩基配列中のGC rateは以下のように求めることができる。
+ここで、lenは、ある文字列Sの長さを取得する関数。
+
+```python
+DNA : str = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+
+gc_rate : float = (DNA.count("G") + DNA.count("C")) / len(DNA)
+print(gc_rate)
+
+```
+
 
 
 ## 転写
