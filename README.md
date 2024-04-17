@@ -20,7 +20,7 @@ print(generate_sequence_ver1(10))
 ```Python
 import random 
 
-nucleotides = ["A", "C", "G", "T"]
+nucleotides : list[str] = ["A", "C", "G", "T"]
 
 def generate_sequence_ver2(length: int) -> str:
     return "".join([random.choice(nucleotides) for _ in range(length)])
