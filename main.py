@@ -56,7 +56,7 @@ M : str = "ATAT"
 
 def find_motif_1(DNA: str, M: str) -> list:
     motif_indices = []
-    for i in range*len(DNA):
+    for i in range(len(DNA)-len(M)+1):
         if DNA[i:i+len(M)] == M:
             motif_indices.append(i)
     return motif_indices
@@ -65,6 +65,6 @@ print(find_motif_1(DNA, M))
 
 
 def find_motif_2(DNA: str, M: str) -> list:
-    return [i for i in range(len(DNA)) if DNA[i:i+len(M)] == M]
+    return [i for i in range(len(DNA)-len(M)+1) if DNA[i:i+len(M)] == M]
 
 print(find_motif_2(DNA, M))
