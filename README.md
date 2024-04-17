@@ -213,7 +213,12 @@ print(find_motif_2(DNA, M))
 
 FASTAフォーマットで与えられるテキストデータをpythonで読み込むには、以下のファイル読み込みの構文を使用する。この構文はcsvやexcelなどさまざまなファイルを読み込む際にも使用するため、頻出。
 今回はこのレポジトリにある配列データ[data.txt](./data.txt)を例にとる。
+
 ```python
+with open("data.txt") as f:
+    lines = [i.replace("\n","") for i in f.readlines()]
 ```
+上記構文ではlinesには行を一つの文字列として、すべての文字列が上から順にリストとして格納されている状態である。
+
 
 
