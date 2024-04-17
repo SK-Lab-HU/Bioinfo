@@ -16,8 +16,18 @@ def generate_sequence_ver2(length: int) -> str:
 print(generate_sequence_ver2(30))
 
 DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+
 print(DNA.count("A"))
 print(DNA.count("C"))   
 print(DNA.count("G"))
 print(DNA.count("T"))
 
+DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+
+gc_rate = (DNA.count("G") + DNA.count("C")) / len(DNA)
+print(gc_rate)
+
+
+DNA = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+
+mRNA = DNA.replace("T", "U")
