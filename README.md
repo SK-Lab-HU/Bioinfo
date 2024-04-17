@@ -246,8 +246,17 @@ print(sequences)
 最長共通モチーフ探索に使用する配列群は、上記で取得したsequencesとする。
 戦略としては、始めに複数ある塩基配列のうち最短のものを軸としてその塩基配列を単位ヌクレオチドずつ切っていき、すべての配列に共通するモチーフが現れた時点で探索を終了するというシンプルなもの。
 
-```python
+始めに、以下のように最短の配列を求める。
 
+```python
+shortest_seq: str = sequences[0]
+shortest_seq_length : int = len(sequences[0])
+
+for i in sequences:
+    if len(i) < shortest_seq_length:
+        shortest_seq = i
+        shortest_seq_length = len(i)
 ```
+
 
 
