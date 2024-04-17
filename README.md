@@ -64,10 +64,13 @@ print(gc_rate)
 
 ```
 
-
-
 ## 転写
 
-以下のDNA配列について考える。
+Pythonのreplace構文を使用して、"T"を"U"に変更することで転写を再現することができる。
 
+```python
+DNA : str = "CGGAAGCGTGGCTTTTATTCCTCGTGACAC"
+mRNA : str = DNA.replace("T", "U")
+
+```
 
