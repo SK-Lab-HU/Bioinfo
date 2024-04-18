@@ -312,7 +312,7 @@ def sanitize(seq: str) -> str:
 
 def translate(s: str) -> str:
     seq = sanitize(s)
-    DNA_to_Codon = {
+    DNA_to_AA = {
         "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",
         "TGT": "C", "TGC": "C",
         "GAT": "D", "GAC": "D",
@@ -335,7 +335,7 @@ def translate(s: str) -> str:
         "TAT": "Y", "TAC": "Y",
         "TAA": "_", "TAG": "_", "TGA": "_"
     }
-    protein = "".join(DNA_to_Codon.get(seq[i:i+3], '') for i in range(0, len(seq) - 2, 3))
+    protein = "".join(DNA_to_AA.get(seq[i:i+3], '') for i in range(0, len(seq) - 2, 3))
     return protein
 ```
 
