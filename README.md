@@ -374,7 +374,7 @@ DNA断片から元のDNA配列を組み立てるアルゴリズムについて�
 
 ```bash
 fragments_raw = ['ATTAGACCTG','CCTGCCGGAA','AGACCTGCCG','GCCGGAATAC']
-fragments = sorted(fragments)
+fragments = sorted(fragments_raw)
 ```
 
 任意の二つのDNA断片について、オーバーラップしている部分前後二箇所のうち長い方を返す関数を定義する。
